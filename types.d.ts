@@ -33,3 +33,11 @@ type OptionsProps = {
   label: string;
   value: string;
 };
+
+type FormeState = {
+  success?: boolean;
+  data?: any;
+  errors?: {
+    [key: string]: string[];
+  };
+};

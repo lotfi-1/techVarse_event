@@ -3,14 +3,18 @@
 import React, { useState } from "react";
 
 interface SelectProps {
+  name: string;
   options: OptionsProps[];
   defaultSelected?: string;
   placeholder?: string;
+  errorMsg?: string;
 }
 const DropdownSelect = ({
+  name,
   options,
   defaultSelected,
   placeholder,
+  errorMsg,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(defaultSelected ?? "");
@@ -48,7 +52,10 @@ const DropdownSelect = ({
           </ul>
         </div>
       )}
-      <input type="hidden" value={selectedOption} name="hearAboutUs" />
+      <input type="hidden" value={selectedOption} name={name} />
+      {errorMsg && (
+        <p className="absolute top-full right-0 text-red-500">{errorMsg}</p>
+      )}
     </div>
   );
 };

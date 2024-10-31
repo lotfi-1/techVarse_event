@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 
 interface InputProps {
+  name: string;
   label?: string;
   placeholder?: string;
   className?: string;
@@ -13,6 +14,7 @@ interface InputProps {
 }
 
 export default function TextFields({
+  name,
   required,
   label,
   placeholder,
@@ -29,6 +31,7 @@ export default function TextFields({
           {firstContent}
         </div>
         <input
+          name={name}
           type={type}
           required={required}
           placeholder={placeholder}

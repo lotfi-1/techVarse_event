@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "framer-motion": "^12.0.0-alpha.0",
+    "googleapis": "^144.0.0",
     "next": "15.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
