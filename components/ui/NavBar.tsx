@@ -7,11 +7,11 @@ import { useState } from "react";
 import BackDrop from "./BackDrop";
 
 const NAV_ITEMS = [
-  { href: "#home", label: "Event" },
-  { href: "#event", label: "Highlights" },
-  { href: "#speakers", label: "Speaker" },
-  { href: "#audience", label: "Audience" },
-  { href: "#partners", label: "Partners" },
+  { href: "/#home", label: "Event" },
+  { href: "/#event", label: "Highlights" },
+  { href: "/#speakers", label: "Speaker" },
+  { href: "/#audience", label: "Audience" },
+  { href: "/#partners", label: "Partners" },
 ];
 
 const sidebarVariants = {
@@ -49,7 +49,10 @@ function DesktopNavBar() {
         <ul className="flex gap-x-5">
           {NAV_ITEMS.map((item, index) => (
             <li key={index}>
-              <Link href={item.href} className="text-primary-txt">
+              <Link
+                href={item.href}
+                className="text-primary-txt transition-all hover:text-purple"
+              >
                 {item.label}
               </Link>
             </li>
@@ -113,7 +116,7 @@ function SideNavBar() {
                   >
                     <Link
                       href={item.href}
-                      className="blur-button hover:light-button"
+                      className="transition-all hover:text-purple"
                     >
                       {item.label}
                     </Link>

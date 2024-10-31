@@ -6,6 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Counter from "../Counter";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -35,7 +36,7 @@ export default function Home() {
       ))}
       <Counter />
       <div className="flex py-4">
-        <button className="btn-primary mr-4">Register Now</button>
+        <Link href="/register" className="btn-primary mr-4">Register Now</Link>
         <button className="btn-secondary">Learn More</button>
       </div>
     </motion.section>

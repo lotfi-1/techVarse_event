@@ -28,3 +28,8 @@ type ArticleProps = {
   title: string;
   body: string;
 };
+
+type OptionsProps = {
+  label: string;
+  value: string;
+};

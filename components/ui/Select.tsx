@@ -1,0 +1,56 @@
+/** @format */
+
+import React, { useState } from "react";
+
+interface SelectProps {
+  options: OptionsProps[];
+  defaultSelected?: string;
+  placeholder?: string;
+}
+const DropdownSelect = ({
+  options,
+  defaultSelected,
+  placeholder,
+}: SelectProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(defaultSelected ?? "");
+
+  // Toggle dropdown menu visibility
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  // Handle selection and deselection of options
+  const handleOptionChange = (option: string) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="relative inline-block text-left">
+      <button
+        onClick={toggleDropdown}
+        className="flex justify-start w-full px-4 py-2 border border-foreground  bg-background"
+      >
+        {selectedOption || placeholder || "Select an option"}
+      </button>
+
+      {isOpen && (
+        <div className="z-50 w-full absolute left-0 mt-2  bg-background border border-foreground">
+          <ul className="py-2">
+            {options.map((option) => (
+              <li
+                key={option.value}
+                className="px-4 py-1 cursor-pointer transition-all hover:text-purple"
+                onClick={() => handleOptionChange(option.value)}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <input type="hidden" value={selectedOption} name="hearAboutUs" />
+    </div>
+  );
+};
+
+export default DropdownSelect;

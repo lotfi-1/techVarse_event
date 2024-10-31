@@ -54,6 +54,12 @@ body,
 .btn-secondary {
   @apply bg-background h-10 flex justify-center items-center text-primary-txt px-4 border border-foreground;
 }
+
+.btn-group {
+  @apply bg-foreground h-10 text-background flex justify-center items-center px-4;
+}
+
+
 .title {
   @apply text-primary-txt text-center text-[40px] md:text-[64px] lg:text-[80px] font-bold;
 }
