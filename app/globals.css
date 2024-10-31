@@ -1,21 +1,84 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f7f7f7; /* used*/
   --foreground: #171717;
+  --primary-txt: #000000; /* used*/
+  --primary-400: #0c0d0e;
+  --primary-300: #878787;
+  --primary-200: #cccccc;
+  --primary-100: #f7f7f7;
+  --btn-background: #0c0d0e; /* used*/
+  --dimension: calc(100% - 23px);
+  --shadow-color: #f7f7f7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0c0d0e;
     --foreground: #ededed;
+    --primary-txt: #ffffff;
+    --primary-300: #101214;
+    --primary-200: #1a1a1a;
+    --primary-100: #555555;
+    --btn-background: #a849f4;
+    --shadow-color: #a849f4;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.btn-primary {
+  @apply bg-btn-background h-10 text-secondary-100 flex justify-center items-center px-4;
+}
+
+.btn-secondary {
+  @apply bg-background h-10 flex justify-center items-center text-primary-txt px-4 border border-foreground;
+}
+.title {
+  @apply text-primary-txt text-center text-[40px] md:text-[64px] lg:text-[80px] font-bold;
+}
+
+.sub-title {
+  @apply text-primary-txt text-center  text-[36px] md:text-[48px] font-bold;
+}
+
+@layer components {
+  .underlined a {
+    @apply relative;
+  }
+  .underlined a::before {
+    content: "";
+    @apply w-full h-px bg-foreground absolute -bottom-0.5 left-0;
+  }
+  .article {
+    @apply relative;
+  }
+  .article::before {
+    content: "";
+    @apply w-4 h-4 rounded-[50%] bg-foreground absolute top-0 left-0 md:top-full;
+  }
+  .article::after {
+    content: "";
+    @apply w-[3px] h-dimension md:h-[3px] md:w-dimension bg-foreground absolute top-[23px] left-0 md:top-full md:left-[23px];
+  }
 }
