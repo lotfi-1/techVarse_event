@@ -2,10 +2,7 @@
 
 import { registerSchema } from "./zodObjects";
 
-export async function register(
-  state: FormeState,
-  formData: FormData
-): Promise<any> {
+export function checkData(formData: FormData): FormeState {
   const validatedFields = registerSchema.safeParse({
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -20,28 +17,47 @@ export async function register(
 
   if (!validatedFields.success) {
     return {
+      serverError: false,
+      response: false,
+      success: false,
+      data: null,
       errors: validatedFields.error.flatten().fieldErrors,
     };
+  } else {
+    return {
+      serverError: false,
+      response: false,
+      success: true,
+      data: null,
+      errors: null,
+    };
   }
-  if (validatedFields.success) {
-    const response = await fetch("/api/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+}
+
+export async function register(data: any): Promise<FormeState> {
+  const response = await fetch("/api/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) {
+    return {
+      response: false,
+      success: false,
+      serverError: true,
+      errors: {
+        serverError: ["Internal Server Error"],
       },
-      body: JSON.stringify(validatedFields.data),
-    });
-    if (!response.ok) {
-      return {
-        success: false,
-        errors: {
-          serverError: ["Internal Server Error"],
-        },
-      };
-    } else {
-      return {
-        success: true,
-      };
-    }
+    };
+  } else {
+    const data = await response.json();
+    return {
+      response: true,
+      success: true,
+      serverError: false,
+      data,
+    };
   }
 }

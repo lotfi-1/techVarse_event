@@ -5,38 +5,65 @@ import ButtonGroup from "../ButtonsGroup";
 import DropdownSelect from "../Select";
 import TextFields from "../TextField";
 import { MdEmail } from "react-icons/md";
-import { register } from "@/lib/sendForm";
-import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { checkData, register } from "@/lib/sendForm";
+import { useEffect, useState } from "react";
+import useCustomFormeState from "@/hooks/use-forme-state";
+import Modal from "../Modal";
+import Loading from "../Loading";
 
 const initialState: FormeState = {
+  response: false,
+  serverError: false,
   success: false,
   data: null,
   errors: {
-    firstName: [""],
-    lastName: [""],
-    email: [""],
-    age: [""],
-    studyLevel: [""],
-    fieldOfStudy: [""],
-    state: [""],
-    phoneNumber: [""],
-    hearAboutUs: [""],
-    serverError: [""],
+    firstName: [],
+    lastName: [],
+    email: [],
+    age: [],
+    studyLevel: [],
+    fieldOfStudy: [],
+    state: [],
+    phoneNumber: [],
+    hearAboutUs: [],
+    serverError: [],
   },
 };
 
 export default function RegisterForm() {
-  const [state, formAction] = useFormState(register, initialState);
+  const [open, setOpen] = useState(false);
+
+  const [loading, setIsLoading] = useState(true);
+
+  const handleSubmit = () => setOpen(true);
+
+  const { state, formAction } = useCustomFormeState({
+    action: register,
+    initialState,
+    onCheck: checkData,
+    onSubmit: handleSubmit,
+  });
+
   useEffect(() => {
-    if (state.success) {
-      alert("you have registered successfully");
+    if (state.response) {
+      setIsLoading(false);
     }
-  }, [state.success]);
+  }, [state.response]);
+
+  useEffect(() => {
+    if (state.serverError) {
+      setIsLoading(false);
+    }
+  }, [state.serverError]);
+
+  const handleBackDropClick = () => {
+    setOpen(!state.response);
+  };
+
   return (
     <form
-      action={formAction}
-      className="w-full md:w-[560px] mt-10 flex flex-col gap-y-4"
+      onSubmit={formAction}
+      className="w-full max-w-[560px] mt-10 flex flex-col gap-y-4"
     >
       <TextFields
         name="firstName"
@@ -113,6 +140,21 @@ export default function RegisterForm() {
           Register
         </button>
       </div>
+      <Modal open={open} onBackdropClick={handleBackDropClick}>
+        <div className="w-[200px] h-[250px] flex justify-center items-center">
+          {loading && <Loading />}
+          {state.response && (
+            <p className="text-center text-background">
+              You Have Registered Successfully
+            </p>
+          )}
+          {state.serverError && (
+            <p className="text-center text-background text-red-500">
+              There was an error, please try again later.
+            </p>
+          )}
+        </div>
+      </Modal>
     </form>
   );
 }

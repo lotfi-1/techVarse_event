@@ -35,9 +35,11 @@ type OptionsProps = {
 };
 
 type FormeState = {
-  success?: boolean;
+  response: boolean = false;
+  serverError: boolean = false;
+  success: boolean = false;
   data?: any;
-  errors?: {
-    [key: string]: string[];
+  errors?: null | {
+    [key: string]: string[] | undefined;
   };
 };
