@@ -26,6 +26,7 @@ export default function ButtonGroup({
     <div className="flex gap-2 relative">
       {options.map((option: OptionsProps) => (
         <button
+          type="button"
           key={option.value}
           onClick={() => handleToggle(option)}
           className={
@@ -36,7 +37,9 @@ export default function ButtonGroup({
         </button>
       ))}
       <input type="hidden" value={selectedOption} name={name} />
-      {errorMsg && <p className="absolute top-full right-0 text-red-500">{errorMsg}</p>}
+      {errorMsg && (
+        <p className="absolute top-full right-0 text-red-500">{errorMsg}</p>
+      )}
     </div>
   );
 }

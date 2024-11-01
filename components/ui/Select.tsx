@@ -31,6 +31,7 @@ const DropdownSelect = ({
   return (
     <div className="relative inline-block text-left">
       <button
+        type="button"
         onClick={toggleDropdown}
         className="flex justify-start w-full px-4 py-2 border border-foreground  bg-background"
       >
