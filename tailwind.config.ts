@@ -2,7 +2,6 @@
 
 import type { Config } from "tailwindcss";
 
-
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -42,16 +41,17 @@ const config: Config = {
         dimension: "var(--dimension)",
       },
       animation: {
-        spin: 'spin 1s linear infinite',
+        spin: "spin 1s linear infinite",
       },
       keyframes: {
         spin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
 export default config;

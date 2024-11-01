@@ -17,7 +17,9 @@ export default function Partners() {
       </p>
       <div className="flex flex-wrap max-w-[700px] justify-center items-center gap-x-8 gap-y-6 mt-20">
         {Array.from({ length: 16 }).map((_, i) => (
-          <p className="font-bold text-xl">Logo {i}</p>
+          <p key={i} className="font-bold text-xl">
+            Logo {i}
+          </p>
         ))}
       </div>
     </motion.section>

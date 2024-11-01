@@ -22,8 +22,9 @@ export default function useCustomFormeState({
     const check = onCheck(formData);
     if (check.success) {
       onSubmit && onSubmit();
-      const response = await action(formData);
-      if (response.response) {
+      if (!check.data) return;
+      const response = await action(check.data);
+      if (response) {
         setState(response);
       }
     } else {

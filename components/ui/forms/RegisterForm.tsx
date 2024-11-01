@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import useCustomFormeState from "@/hooks/use-forme-state";
 import Modal from "../Modal";
 import Loading from "../Loading";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import { MdOutlineError } from "react-icons/md";
 
 const initialState: FormeState = {
   response: false,
@@ -57,7 +59,12 @@ export default function RegisterForm() {
   }, [state.serverError]);
 
   const handleBackDropClick = () => {
-    setOpen(!state.response);
+    if (state.response) {
+      setOpen(!state.response);
+    }
+    if (state.serverError) {
+      setOpen(!state.serverError);
+    }
   };
 
   return (
@@ -128,8 +135,9 @@ export default function RegisterForm() {
       />
       <DropdownSelect
         options={[
-          { label: "Male", value: "male" },
-          { label: "Female", value: "female" },
+          { label: "FaceBook", value: "facebook" },
+          { label: "Instagram", value: "instagram" },
+          { label: "Github", value: "github" },
           { label: "Other", value: "other" },
         ]}
         name="hearAboutUs"
@@ -144,14 +152,20 @@ export default function RegisterForm() {
         <div className="w-[200px] h-[250px] flex justify-center items-center">
           {loading && <Loading />}
           {state.response && (
-            <p className="text-center text-background">
-              You Have Registered Successfully
-            </p>
+            <div className="flex flex-col gap-y-4 items-center">
+              <IoCheckmarkCircle className="text-purple text-[60px]" />
+              <p className="text-center text-background">
+                You Have Registered Successfully
+              </p>
+            </div>
           )}
           {state.serverError && (
-            <p className="text-center text-background text-red-500">
-              There was an error, please try again later.
-            </p>
+            <div className="flex flex-col gap-y-4 items-center">
+              <MdOutlineError className="text-red-500 text-[60px]" />
+              <p className="text-center text-background text-red-500">
+                There was an error, please try again later.
+              </p>
+            </div>
           )}
         </div>
       </Modal>

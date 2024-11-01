@@ -47,6 +47,15 @@ body,
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .btn-primary {
   @apply bg-btn-background h-10 text-secondary-100 flex justify-center items-center px-4;
 }
@@ -58,7 +67,6 @@ body,
 .btn-group {
   @apply bg-foreground h-10 text-background flex justify-center items-center px-4;
 }
-
 
 .title {
   @apply text-primary-txt text-center text-[40px] md:text-[64px] lg:text-[80px] font-bold;

@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import useCounter from "@/hooks/use-counter";
-import CounterCard from "./ui/cards/CounterCard";
+import CounterCard from "./cards/CounterCard";
 
 export default function Counter() {
   const { days, hours, minutes, seconds } = useCounter();

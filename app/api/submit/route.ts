@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
     const lastRow = await getLastRow(sheets, spreadsheetId); // Get the last row number
     const range = `attendees!A${lastRow}:I${lastRow}`; // Ensure this matches the actual sheet name
 
+    console.log("called");
     const values = [
       [
         firstName,
@@ -73,7 +74,7 @@ export async function POST(req: NextRequest) {
     if (response.status !== 200) {
       throw new Error("Internal server error");
     }
-    
+
     return NextResponse.json(
       { message: "Data inserted successfully!" },
       { status: 200 }

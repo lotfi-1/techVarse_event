@@ -28,7 +28,7 @@ export function checkData(formData: FormData): FormeState {
       serverError: false,
       response: false,
       success: true,
-      data: null,
+      data: validatedFields.data,
       errors: null,
     };
   }

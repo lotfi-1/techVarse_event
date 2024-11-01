@@ -1,8 +1,4 @@
 /** @format */
-
-import SpeakerCard from "@/components/ui/cards/SpeakerCard";
-import Counter from "@/components/Counter";
-import Image from "next/image";
 import PurpleLight from "@/components/ui/PurpleLight";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
