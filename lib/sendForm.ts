@@ -42,17 +42,17 @@ export async function register(data: any): Promise<FormeState> {
     },
     body: JSON.stringify(data),
   });
+  const resData = await response.json();
   if (!response.ok) {
     return {
       response: false,
       success: false,
       serverError: true,
       errors: {
-        serverError: ["Internal Server Error"],
+        serverError: [resData.message],
       },
     };
   } else {
-    const data = await response.json();
     return {
       response: true,
       success: true,

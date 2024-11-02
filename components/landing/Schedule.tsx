@@ -3,36 +3,14 @@
 "use client";
 import Link from "next/link";
 import Articles from "../ui/Articles";
-import { motion } from "framer-motion";
-
-const articles: ArticleProps[] = [
-  {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
-  },
-  {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
-  },
-  {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
-  },
-  {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
-  },
-];
+import Section from "../ui/Section";
+import { articles } from "@/lib/data/articles";
 
 export default function Schedule() {
   return (
-    <motion.section
+    <Section
       id="schedule"
-      className="w-full flex justify-start items-center flex-wrap gap-x-20 px-6 md:px-16 py-28"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      className="flex justify-start items-center flex-wrap gap-x-20"
     >
       <div className="w-full max-w-[600px] flex flex-col items-start">
         <h1 className="sub-title !text-start mb-6">
@@ -52,6 +30,6 @@ export default function Schedule() {
       <div className="w-full flex justify-center mt-20 md:h-[400px]">
         <Articles articles={articles} />
       </div>
-    </motion.section>
+    </Section>
   );
 }

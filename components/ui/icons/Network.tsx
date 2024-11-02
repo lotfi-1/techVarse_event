@@ -12,6 +12,7 @@ export default function Network({ className }: { className?: string }) {
       xmlSpace="preserve"
     >
       <path
+        className="fill-current"
         id="networking--06_1_"
         d="M29,9.64c-1.179,0-2.159,0.869-2.333,2h-2.334c-0.156-1.014-0.959-1.817-1.973-1.973V5.333
 	c1.131-0.174,2-1.154,2-2.333c0-1.301-1.059-2.36-2.36-2.36S19.64,1.699,19.64,3c0,1.179,0.869,2.159,2,2.333v4.335

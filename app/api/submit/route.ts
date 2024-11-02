@@ -1,16 +1,24 @@
 /** @format */
 
 import { google } from "googleapis";
+import { console } from "inspector";
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
 
-async function getLastRow(sheets: any, spreadsheetId: string) {
+async function checkEmailExist(
+  sheets: any,
+  spreadsheetId: string,
+  email: string
+) {
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: "Sheet1!A:A", // Ensure this matches your actual sheet name
+    range: "Sheet1!C2:C", // Ensure this matches your actual sheet name
   });
   const rows = response.data.values;
-  return rows ? rows.length + 1 : 1; // Return the next row number to insert data
+  if (!rows) {
+    return false;
+  }
+  const emails = rows.filter((row: any) => row[0] === email);
+  return emails.length > 0;
 }
 
 export async function POST(req: NextRequest) {
@@ -42,12 +50,15 @@ export async function POST(req: NextRequest) {
 
     const sheets = google.sheets({ version: "v4", auth });
 
-    // const client = await auth.getClient();
     const spreadsheetId = "15Rp2h78BKfO12ZYzytbR3NVbD-Mf0FFlTPyCj85OSqk"; // Replace with your Spreadsheet ID
-    const lastRow = await getLastRow(sheets, spreadsheetId); // Get the last row number
-    const range = `attendees!A${lastRow}:I${lastRow}`; // Ensure this matches the actual sheet name
+    const isExist = await checkEmailExist(sheets, spreadsheetId, email);
 
-    console.log("called");
+    if (isExist) {
+      return NextResponse.json(
+        { message: "You Already Registered In This Event" },
+        { status: 401 }
+      );
+    }
     const values = [
       [
         firstName,
@@ -75,10 +86,7 @@ export async function POST(req: NextRequest) {
       throw new Error("Internal server error");
     }
 
-    return NextResponse.json(
-      { message: "Data inserted successfully!" },
-      { status: 200 }
-    );
+    return NextResponse.json({ isExist }, { status: 200 });
   } catch (error) {
     console.error("Error inserting data:", error);
     return NextResponse.json(

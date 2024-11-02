@@ -163,7 +163,8 @@ export default function RegisterForm() {
             <div className="flex flex-col gap-y-4 items-center">
               <MdOutlineError className="text-red-500 text-[60px]" />
               <p className="text-center text-background text-red-500">
-                There was an error, please try again later.
+                {state?.errors?.serverError?.[0] ??
+                  "Server Error Please Try Again Later"}
               </p>
             </div>
           )}

@@ -4,14 +4,13 @@
 import { SlCalender } from "react-icons/sl";
 import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
-import { motion } from "framer-motion";
 import Counter from "../ui/Counter";
 import Particles from "@/components/ui/Particles";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useTheme from "@/hooks/use-theme";
-
+import Section from "../ui/Section";
 export default function Home() {
   const { theme } = useTheme();
   const [color, setColor] = useState(theme === "dark" ? "#F7F7F7" : "#0C0D0E");
@@ -21,13 +20,9 @@ export default function Home() {
   }, [theme]);
 
   return (
-    <motion.section
+    <Section
       id="home"
-      className="px-6 md:px-16 pt-10 pb-28 relative flex  w-full flex-col items-center justify-center overflow-hidden bg-background"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      className="relative flex  w-full flex-col items-center justify-center overflow-hidden"
     >
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
         <h1 className="title">Unlock the Future of </h1>
@@ -62,6 +57,6 @@ export default function Home() {
         color={color}
         refresh
       />
-    </motion.section>
+    </Section>
   );
 }
