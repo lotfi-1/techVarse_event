@@ -23,11 +23,6 @@ export default async function sendEmail(
     subject: `${event} Register`, // Subject line
     html: htmlContent, // Set the HTML content
   };
-
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log("email sent successfully");
-  } catch (error) {
-    throw new Error("Error sending email");
-  }
+  await transporter.sendMail(mailOptions);
+  console.log("email sent successfully");
 }
