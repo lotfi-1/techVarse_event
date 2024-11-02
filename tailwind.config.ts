@@ -34,6 +34,7 @@ const config: Config = {
           100: "#EFECE6",
         },
         purple: "#A849F4",
+
       },
       spacing: {
         "w-1/2": "calc((100% / 2) - 24px)",

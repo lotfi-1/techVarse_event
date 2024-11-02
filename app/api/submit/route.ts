@@ -1,9 +1,10 @@
 /** @format */
 
+import sendEmail from "@/utils/sendEmail";
 import { google } from "googleapis";
-import { console } from "inspector";
 import { NextRequest, NextResponse } from "next/server";
 
+const EVENT_NAME = "Unlock the Future of Cybersecurity & Innovation";
 async function checkEmailExist(
   sheets: any,
   spreadsheetId: string,
@@ -85,12 +86,14 @@ export async function POST(req: NextRequest) {
     if (response.status !== 200) {
       throw new Error("Internal server error");
     }
+    await sendEmail(`${firstName} ${lastName}`, email, EVENT_NAME);
 
-    return NextResponse.json({ isExist }, { status: 200 });
+    // return NextResponse.json({ isExist }, { status: 200 });
+    return NextResponse.json({}, { status: 200 });
   } catch (error) {
     console.error("Error inserting data:", error);
     return NextResponse.json(
-      { message: "Error inserting data" },
+      { message: "Error When Inserting Data" },
       { status: 500 }
     );
   }
