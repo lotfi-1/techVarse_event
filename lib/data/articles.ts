@@ -11,11 +11,11 @@ export const articles: ArticleProps[] = [
   },
   {
     title: "10:30-11:50",
-    body: "Conference 2",
+    body: "Conference 2 (azzedine)",
   },
   {
     title: "13:00-14:15",
-    body: "Conference 3",
+    body: "Conference 3 (titraoui",
   },
   {
     title: "14:15-14:40",
