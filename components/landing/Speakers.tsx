@@ -10,6 +10,7 @@ export default function Speakers() {
       id="speakers"
       className="flex justify-center items-center flex-col"
     >
+      <span>Speakers</span>
       <h1 className="sub-title mb-6">Meet The Speakers</h1>
       <p className="md:text-lg text-center">
         Leading minds in cybersecurity and Computer Science.

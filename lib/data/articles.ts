@@ -15,7 +15,7 @@ export const articles: ArticleProps[] = [
   },
   {
     title: "13:00-14:15",
-    body: "Conference 3 (titraoui",
+    body: "Conference 3 (titraoui)",
   },
   {
     title: "14:15-14:40",

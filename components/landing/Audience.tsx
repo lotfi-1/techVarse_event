@@ -12,6 +12,7 @@ export default function Audience() {
       className="flex justify-start items-center flex-wrap gap-x-20"
     >
       <div className="w-full max-w-[600px] lg:w-1/3 flex flex-col items-start">
+        <span>Audience</span>
         <h1 className="sub-title !text-start mb-6">Who Should Attend?</h1>
         <p className="md:text-lg text-start mb-8">
           Discover how Security and Computer Science are shaping the future across industries. Whether

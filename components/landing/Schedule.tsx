@@ -13,6 +13,7 @@ export default function Schedule() {
       className="flex justify-start items-center flex-wrap gap-x-20"
     >
       <div className="w-full max-w-[600px] flex flex-col items-start">
+        <span>Schedule</span>
         <h1 className="sub-title !text-start mb-6">
           Unlock the Future: Dive Into the Agenda
         </h1>
