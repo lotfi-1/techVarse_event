@@ -7,15 +7,15 @@ export const articles: ArticleProps[] = [
   },
   {
     title: "09:00-10:25",
-    body: "Welcome Word",
-  },
-  {
-    title: "10:30-11:50",
     body: "Conference 1 (chergui)",
   },
   {
-    title: "13:00-14:15",
+    title: "10:30-11:50",
     body: "Conference 2",
+  },
+  {
+    title: "13:00-14:15",
+    body: "Conference 3",
   },
   {
     title: "14:15-14:40",
