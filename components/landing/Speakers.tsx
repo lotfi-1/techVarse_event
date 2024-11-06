@@ -14,7 +14,7 @@ export default function Speakers() {
       <p className="md:text-lg text-center">
         Leading minds in cybersecurity and entrepreneurship.
       </p>
-      <div className="w-full flex flex-col md:flex-row flex-wrap items-center md:justify-evenly gap-y-16 mt-12 md:mt-20">
+      <div className="w-full flex flex-col md:flex-row flex-wrap items-center md:justify-evenly gap-y-16 mt-12 ">
         {speakers.map((speaker, ind) => (
           <SpeakerCard key={ind} speaker={speaker} />
         ))}

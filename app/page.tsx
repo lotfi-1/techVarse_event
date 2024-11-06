@@ -19,7 +19,7 @@ export default function Page() {
       <Speakers />
       <Audience />
       <Schedule />
-      <Partners />
+      {/* <Partners /> */}
       <Footer />
     </div>
   );

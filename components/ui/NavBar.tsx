@@ -11,7 +11,6 @@ const NAV_ITEMS = [
   { href: "/#event", label: "Highlights" },
   { href: "/#speakers", label: "Speaker" },
   { href: "/#audience", label: "Audience" },
-  { href: "/#partners", label: "Partners" },
 ];
 
 const sidebarVariants = {

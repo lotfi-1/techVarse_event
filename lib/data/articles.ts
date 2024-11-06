@@ -2,19 +2,23 @@
 
 export const articles: ArticleProps[] = [
   {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
+    title: "08:30-09:00",
+    body: "Check-In",
   },
   {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
+    title: "09:00-09:15",
+    body: "Welcome Word",
   },
   {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
+    title: "09:15-10:20",
+    body: "Conference",
   },
   {
-    title: "Keynote Speech",
-    body: "Explore the future of the  Future of Cybersecurity & Innovation Future of Cybersecurity & Innovation",
+    title: "10:20-10:30",
+    body: "Talking",
+  },
+  {
+    title: "10:30-11:00",
+    body: "Closure Ceremony",
   },
 ];
