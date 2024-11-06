@@ -123,26 +123,33 @@ export default function RegisterForm() {
         required
         errorMsg={state?.errors?.phoneNumber?.[0] ?? ""}
       />
-      <ButtonGroup
-        options={[
-          { label: "Not Going", value: "not-going" },
-          { label: "Maybe", value: "maybe" },
-          { label: "Going", value: "going" },
-        ]}
-        defaultSelected="maybe"
-        name="state"
-        errorMsg={state?.errors?.state?.[0] ?? ""}
-      />
-      <DropdownSelect
-        options={[
-          { label: "FaceBook", value: "facebook" },
-          { label: "Instagram", value: "instagram" },
-          { label: "Github", value: "github" },
-          { label: "Other", value: "other" },
-        ]}
-        name="hearAboutUs"
-        errorMsg={state?.errors?.hearAboutUs?.[0] ?? ""}
-      />
+      <div>
+        <label className="mb-2">Chances of attendance </label>
+        <ButtonGroup
+          options={[
+            { label: "Not Going", value: "not-going" },
+            { label: "Maybe", value: "maybe" },
+            { label: "Going", value: "going" },
+          ]}
+          defaultSelected="maybe"
+          name="state"
+          errorMsg={state?.errors?.state?.[0] ?? ""}
+        />
+      </div>
+      <div>
+        <label className="mb-2">How did you hear about us?</label>
+
+        <DropdownSelect
+          options={[
+            { label: "FaceBook", value: "facebook" },
+            { label: "Instagram", value: "instagram" },
+            { label: "Github", value: "github" },
+            { label: "Other", value: "other" },
+          ]}
+          name="hearAboutUs"
+          errorMsg={state?.errors?.hearAboutUs?.[0] ?? ""}
+        />
+      </div>
       <div className="flex justify-end">
         <button type="submit" className="btn-primary">
           Register
