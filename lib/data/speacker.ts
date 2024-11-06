@@ -2,10 +2,10 @@
 
 export const speakers = [
   {
-    name: "Dr. chergui",
+    name: "Dr. chergui nadjah",
     title: "Cybersecurity Professor",
-    role: "Tech Verse",
-    bio: "John Doe is a passionate tech entrepreneur who has been working in the tech industry for over 10 years.",
+    role: "Cybersecurity Professor",
+    bio: "A Cybersecurity Professor at Médéa University (Université de Médéa) in Algeria, is dedicated to advancing knowledge and expertise in the field of cybersecurity.",
     image: "/assets/security.jpeg",
     socials: {
       twitter: "https://twitter.com/johndoe",

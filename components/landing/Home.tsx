@@ -36,7 +36,7 @@ export default function Home() {
       {[
         { icon: <SlCalender />, text: "Mon 11 Nov 2024" },
         { icon: <IoLocationOutline />, text: "Yahia Fares University-ouzera" },
-        { icon: <AiOutlineUser />, text: "Dr. chergui" },
+        { icon: <AiOutlineUser />, text: "Dr. chergui nadjah" },
       ].map((item, index) => (
         <div key={index} className="flex gap-x-2 items-center">
           {item.icon}

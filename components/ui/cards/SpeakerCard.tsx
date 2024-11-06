@@ -20,7 +20,7 @@ export default function SpeakerCard({ speaker }: { speaker: SpeakerProps }) {
         <h4 className="text-lg text-center">{speaker.role}</h4>
         <p className="text-base mt-4 text-center">{speaker.bio}</p>
       </div>
-      <div className="flex gap-x-3.5 justify-center text-lg">
+      {/* <div className="flex gap-x-3.5 justify-center text-lg">
         <Link href={speaker.socials.linkedin}>
           <BsTwitterX />
         </Link>
@@ -30,7 +30,7 @@ export default function SpeakerCard({ speaker }: { speaker: SpeakerProps }) {
         <Link href={speaker.socials.twitter}>
           <IoBasketballOutline />
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }
