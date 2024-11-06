@@ -26,12 +26,12 @@ export default function Home() {
     >
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
         <h1 className="title">Unlock the Future of </h1>
-        <h1 className="title">Cybersecurity</h1>
+        <h1 className="title">Cybersecurity & Computer Science</h1>
       </span>
 
       <p className="mt-4 mb-5 text-center">
         Join us for an immersive experience with industry experts in
-        cybersecurity .
+        cybersecurity & computer science.
       </p>
       {[
         { icon: <SlCalender />, text: "Mon 11 Nov 2024" },

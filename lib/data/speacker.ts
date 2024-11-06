@@ -13,4 +13,28 @@ export const speakers = [
       github: "https://github.com/johndoe",
     },
   },
+  {
+    name: "Dr. benaissa azzedine",
+    title: "Computer Science Professor",
+    role: "Computer Science Professor",
+    bio: "A Computer Science Professor at Médéa University (Université de Médéa) in Algeria, is dedicated to advancing knowledge and expertise in the field of Computer Science.",
+    image: "/assets/benaissa.png",
+    socials: {
+      twitter: "https://twitter.com/johndoe",
+      linkedin: "https://www.linkedin.com/in/johndoe",
+      github: "https://github.com/johndoe",
+    },
+  },
+  {
+    name: "Akram Titraoui",
+    title: "AI Student",
+    role: "AI Student",
+    bio: "A AI Student at Médéa University (Université de Médéa) in Algeria, is dedicated to advancing knowledge and expertise in the field of computer science and ai.",
+    image: "/assets/ai.jpg",
+    socials: {
+      twitter: "https://twitter.com/johndoe",
+      linkedin: "https://www.linkedin.com/in/johndoe",
+      github: "https://github.com/johndoe",
+    },
+  },
 ];

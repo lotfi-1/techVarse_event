@@ -14,7 +14,7 @@ export default function Audience() {
       <div className="w-full max-w-[600px] lg:w-1/3 flex flex-col items-start">
         <h1 className="sub-title !text-start mb-6">Who Should Attend?</h1>
         <p className="md:text-lg text-start mb-8">
-          Discover how Security is shaping the future across industries. Whether
+          Discover how Security and Computer Science are shaping the future across industries. Whether
           you're a professional, student, developer, or researcher, this event
           will provide valuable insights and networking opportunities to stay
           ahead of the curve.

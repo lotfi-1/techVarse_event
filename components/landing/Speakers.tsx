@@ -12,7 +12,7 @@ export default function Speakers() {
     >
       <h1 className="sub-title mb-6">Meet The Speakers</h1>
       <p className="md:text-lg text-center">
-        Leading minds in cybersecurity and entrepreneurship.
+        Leading minds in cybersecurity and Computer Science.
       </p>
       <div className="w-full flex flex-col md:flex-row flex-wrap items-center md:justify-evenly gap-y-16 mt-12 md:mt-20">
         {speakers.map((speaker, ind) => (

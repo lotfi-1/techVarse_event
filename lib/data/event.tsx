@@ -9,7 +9,7 @@ export const eventHighlights = [
     icon: <Mic className="fill-foreground w-10 h-10" />,
     title: "Keynote Speech",
     description:
-      "Explore the future of the Future of Cybersecurity & Innovation",
+      "Explore the future of the Future of Cybersecurity & Computer Science",
   },
   {
     icon: <Qa className="fill-foreground w-10 h-10" />,

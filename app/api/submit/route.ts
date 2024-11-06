@@ -4,7 +4,7 @@ import sendEmail from "@/utils/sendEmail";
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 
-const EVENT_NAME = "Unlock the Future of Cybersecurity & Innovation";
+const EVENT_NAME = "Unlock the Future of Cybersecurity & Computer Science";
 async function checkEmailExist(
   sheets: any,
   spreadsheetId: string,
