@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 interface SelectProps {
   name: string;
@@ -33,9 +34,14 @@ const DropdownSelect = ({
       <button
         type="button"
         onClick={toggleDropdown}
-        className="flex justify-start w-full px-4 py-2 border border-foreground  bg-background"
+        className="flex justify-start items-center w-full px-4 py-2 border border-foreground  bg-background"
       >
         {selectedOption || placeholder || "Select an option"}
+        <FaAngleDown
+          className={`ml-auto transition-transform ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />
       </button>
 
       {isOpen && (

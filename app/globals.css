@@ -57,11 +57,11 @@ body,
 }
 
 .btn-primary {
-  @apply bg-btn-background h-10 text-secondary-100 flex justify-center items-center px-4;
+  @apply bg-btn-background h-10 text-secondary-100 flex justify-center items-center px-4 transition-opacity hover:opacity-80;
 }
 
 .btn-secondary {
-  @apply bg-background h-10 flex justify-center items-center text-primary-txt px-4 border border-foreground;
+  @apply bg-background h-10 flex justify-center items-center text-primary-txt px-4 border border-foreground transition-all hover:border-purple hover:text-purple hover:opacity-75;
 }
 
 .btn-group {
@@ -94,5 +94,12 @@ body,
   .article::after {
     content: "";
     @apply w-[3px] h-dimension md:h-[3px] md:w-dimension bg-foreground absolute top-[23px] left-0 md:top-full md:left-[23px];
+  }
+
+  .footer a {
+    @apply transition-colors hover:text-purple duration-300;
+  }
+  .footer a::before {
+    @apply transition-all hover:bg-purple;
   }
 }

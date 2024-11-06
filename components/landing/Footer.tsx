@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="w-full pt-10 md:pt-20 lg:pt-28">
+    <div className="footer w-full py-10 md:py-20 lg:py-28">
       <PurpleLight />
       <div className="mt-14 flex justify-between items-center flex-wrap flex-col gap-y-12 md:flex-row px-14 mb-12 md:mb-20">
         <h1>Logo</h1>
