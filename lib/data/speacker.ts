@@ -16,9 +16,9 @@ export const speakers = [
   {
     name: "Dr. benaissa azzedine",
     title: "Computer Science Professor",
-    role: "Computer Science Professor",
-    bio: "A Computer Science Professor at Médéa University (Université de Médéa) in Algeria, is dedicated to advancing knowledge and expertise in the field of Computer Science.",
-    image: "/assets/benaissa.png",
+    role: "AI Professor",
+    bio: "A AI Professor at Médéa University (Université de Médéa) in Algeria, is dedicated to advancing knowledge and expertise in the field of AI.",
+    image: "/assets/benaissa.jpg",
     socials: {
       twitter: "https://twitter.com/johndoe",
       linkedin: "https://www.linkedin.com/in/johndoe",
