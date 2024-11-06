@@ -1,5 +1,6 @@
 /** @format */
 
+import Image from "next/image";
 import Link from "next/link";
 import { BsTwitterX, BsLinkedin } from "react-icons/bs";
 import { IoBasketballOutline } from "react-icons/io5";
@@ -7,9 +8,11 @@ import { IoBasketballOutline } from "react-icons/io5";
 export default function SpeakerCard({ speaker }: { speaker: SpeakerProps }) {
   return (
     <div className="w-[304px] h-[513px] flex flex-col gap-y-6">
-      <img
+      <Image
         className="w-full h-[296px]"
         src={speaker.image}
+        width={300}
+        height={300}
         alt="speaker profile"
       />
       <div>
