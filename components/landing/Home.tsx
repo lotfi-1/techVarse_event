@@ -31,12 +31,12 @@ export default function Home() {
 
       <p className="mt-4 mb-5 text-center">
         Join us for an immersive experience with industry experts in
-        cybersecurity & computer science.
+        cybersecurity & computer science & AI.
       </p>
       {[
         { icon: <SlCalender />, text: "Mon 11 Nov 2024" },
         { icon: <IoLocationOutline />, text: "Yahia Fares University-ouzera" },
-        { icon: <AiOutlineUser />, text: "Dr. chergui nadjah" },
+        { icon: <AiOutlineUser />, text: "Dr. chergui & Dr benaissa & titraoui" },
       ].map((item, index) => (
         <div key={index} className="flex gap-x-2 items-center">
           {item.icon}
