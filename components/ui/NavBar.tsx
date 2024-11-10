@@ -60,7 +60,7 @@ function DesktopNavBar() {
         </ul>
       </div>
       <div className="hidden md:flex">
-        <Link href="/register" className="btn-primary">
+        <Link href="/close" className="btn-primary">
           Register Now
         </Link>
       </div>
@@ -79,7 +79,7 @@ function SideNavBar() {
     <div className="flex gap-x-6 md:hidden">
       {/* Mobile Menu Icon */}
       <div className="hidden sm:block">
-        <Link href="/register" className="btn-primary">
+        <Link href="/close" className="btn-primary">
           Register Now
         </Link>
       </div>
@@ -130,7 +130,7 @@ function SideNavBar() {
                   whileTap={{ scale: 0.95 }}
                   className="mt-4 sm:hidden"
                 >
-                  <Link href="/register" className="btn-primary">
+                  <Link href="/close" className="btn-primary">
                     Register Now
                   </Link>
                 </motion.li>

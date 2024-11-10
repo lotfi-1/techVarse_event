@@ -22,7 +22,7 @@ export default function Schedule() {
           event.
         </p>
         <div>
-          <Link href="/register" className="btn-secondary md:!btn-primary">
+          <Link href="/close" className="btn-secondary md:!btn-primary">
             Register Now
           </Link>
         </div>

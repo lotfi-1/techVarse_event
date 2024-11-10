@@ -45,7 +45,7 @@ export default function Home() {
       ))}
       <Counter />
       <div className="flex py-4">
-        <Link href="/register" className="btn-primary mr-4">
+        <Link href="/close" className="btn-primary mr-4">
           Register Now
         </Link>
         <button className="btn-secondary">Learn More</button>

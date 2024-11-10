@@ -21,7 +21,7 @@ export default function Audience() {
           ahead of the curve.
         </p>
         <div>
-          <Link href="/register" className="btn-primary">
+          <Link href="/close" className="btn-primary">
             Register Now
           </Link>
         </div>
